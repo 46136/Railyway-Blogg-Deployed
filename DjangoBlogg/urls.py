@@ -9,9 +9,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blogg.urls')),
     path('registrera/',anvandare_views.registrera, name ='registrera'),
-    path('loggain/',auth_views.LoginView.as_view (template_name='anvandare/loggain.html'), name='loggain'),
     path('profil/',anvandare_views.profil,name='profil'),
-    path('loggaut/',auth_views.LogoutView.as_view (template_name='anvandare/loggaut.html'),name='loggaut'),
+    path('loggaut/',auth_views.LogoutView.as_view(template_name='anvandare/loggaut.html'),name='loggaut'),
+    path('loggain/',auth_views.LoginView.as_view(template_name='anvandare/loggain.html'), name='loggain'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
