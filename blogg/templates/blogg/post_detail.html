@@ -1,0 +1,15 @@
+{% extends 'blogg/mall.html' %}
+
+{% block innehall %}
+    <article class="media content-section">
+      <img class="rounded-circle account-img" src="{{object.forfattare.profil.image.url}}" alt="forfattare profilbild">
+        <div class="media-body">
+          <div class="article-metadata">
+            <a class="mr-2" href="#">{{ object.forfattare }}</a>
+            <small class="text-muted">{{ object.datum_skapad|date:"d.m.Y" }}</small>
+          </div>
+          <h2 class="article-title">{{ object.titel }}</h2>
+          <p class="article-content">{{ object.innehall }}</p>
+        </div>
+      </article>
+{% endblock innehall %}

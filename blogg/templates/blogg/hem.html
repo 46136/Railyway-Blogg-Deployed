@@ -1,0 +1,18 @@
+{% extends 'blogg/mall.html' %}
+
+{% block innehall %}
+    <h1>Blogg hem :)</h1>
+    {% for post in poster %}
+    <article class="media content-section">
+      <img class="rounded-circle account-img" src="{{post.forfattare.profil.image.url}}" alt="forfattare profilbild">
+        <div class="media-body">
+          <div class="article-metadata">
+            <a class="mr-2" href="#">{{ post.forfattare }}</a>
+            <small class="text-muted">{{ post.datum_skapad|date:"d.m.Y" }}</small>
+          </div>
+          <h2> <a class="article-title" href="{% url 'post-sida' post.id %}"> {{ post.titel }}</a></h2>
+          <p class="article-content">{{ post.innehall }}</p>
+        </div>
+      </article>
+    {% endfor %}
+{% endblock innehall %}

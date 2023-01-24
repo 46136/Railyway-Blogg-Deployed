@@ -1,0 +1,14 @@
+{% extends "blogg/mall.html" %}
+{% load crispy_forms_tags %}
+
+{% block innehall %}
+<div class="content-section">
+<h2>Du har loggat ut</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Loggain igen? <a class="ml-2" href="{% url 'loggain' %}">loggain</a>
+        </small>
+    </div>
+</div>
+
+{% endblock innehall %}

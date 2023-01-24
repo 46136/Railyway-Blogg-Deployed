@@ -1,0 +1,18 @@
+{% extends "blogg/mall.html" %}
+{% load crispy_forms_tags %}
+
+{% block innehall %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Ny post</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Skapa</button>
+        </div>
+    </form>
+</div>
+
+{% endblock innehall %}
